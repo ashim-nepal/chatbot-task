@@ -1,0 +1,7 @@
+streamlit
+transformers
+sentence-transformers
+faiss-cpu
+pypdf
+python-dateutil
+validators
