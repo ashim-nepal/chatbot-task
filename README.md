@@ -1,12 +1,12 @@
 # Chatbot Task
 
 
-This is a ML task, where a chatbot is designed to answer queries from any documents uploaded to it. It also has a feature of conversational form that collects user's information like name, phone, email and preferred date for appointment. Using flan-t5-base llm model for generationa nd FAISS for retrival the chatbot performs the task. The conversational form has a good validation and based on user input records are stored.
+This is a ML task, where a chatbot is designed to answer queries from any documents uploaded to it. It also has a feature of conversational form that collects user's information like name, phone, email and preferred date for appointment. Using flan-t5-base llm model for generationa nd FAISS for retrival the chatbot performs the task. The conversational form has a good validation and based on user input only valid records are stored.
 
 
 ## 🚀 About Me
 # Hi, I'm Ashim! 👋
-I'm a Student, Learner, Programmer who is learning and working in AI & Python as my major!
+I'm a Student, Learner, Programmer who is learning and working in AI & Python!
 
 
 
@@ -18,19 +18,19 @@ I'm a Student, Learner, Programmer who is learning and working in AI & Python as
 
 ## Project Demo
 
-I. Chatbot Performance on simple txt document (Sample_docs/sample.txt)
+##### I. Chatbot Performance on simple txt document (Sample_docs/sample.txt)
 ![app-1](https://github.com/ashim-nepal/chatbot-task/blob/main/Project_Screenshots/Screenshot%202025-08-16%20151355.png)
 
-II. Chatbot's Performance on simple pdf document (Sample_docs/sampleText_Nepal.pdf)
+##### II. Chatbot's Performance on simple pdf document (Sample_docs/sampleText_Nepal.pdf)
 ![app-2](https://github.com/ashim-nepal/chatbot-task/blob/main/Project_Screenshots/Screenshot%202025-08-16%20151724.png)
 
-III. Chatbot performance on agentic tool of Appointment Booking(Conversational Form)
+##### III. Chatbot performance on agentic tool of Appointment Booking(Conversational Form)
 ![app-3](https://github.com/ashim-nepal/chatbot-task/blob/main/Project_Screenshots/Screenshot%202025-08-16%20152502.png)
 ![app-4](https://github.com/ashim-nepal/chatbot-task/blob/main/Project_Screenshots/Screenshot%202025-08-16%20152511.png)
 
 
-IV. Chatbot's Performance on handling input data validation on conversational form
-![app-2]()
+##### IV. Chatbot's Performance on handling input data validation on conversational form
+![app-2](https://github.com/ashim-nepal/chatbot-task/blob/main/Project_Screenshots/Screenshot%202025-08-16%20160823.png)
 
 
 
