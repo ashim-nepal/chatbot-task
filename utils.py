@@ -36,3 +36,6 @@ def extract_date_from_text(text: str): # Function to extract date from text
                 diff = 7 if diff == 0 else diff
             return (today + timedelta(days=diff)).strftime("%Y-%m-%d") # Return calculated day according to that day
     return None
+
+
+# BY ASHIM NEPAL

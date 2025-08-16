@@ -43,3 +43,6 @@ def retrieve(query: str, index, chunks: List[str], top_k: int = 4) -> List[Tuple
             continue
         results.append((int(idx), float(score), chunks[idx])) # Append the index score and retrived chunk to results
     return results
+
+
+# BY ASHIM NEPAL

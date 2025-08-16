@@ -3,6 +3,7 @@ import io
 from pypdf import PdfReader
 from transformers import pipeline
 from rag_engine import chunk_text, build_faiss, retrieve
+from agent_tools import AppointmentAgent
 
 
 st.set_page_config(page_title="Doc QA + Appointment", page_icon="🗨️") # streamlit settingf 
@@ -12,11 +13,11 @@ if "chat" not in st.session_state: st.session_state.chat = []
 if "qa_ready" not in st.session_state: st.session_state.qa_ready = False
 if "faiss" not in st.session_state: st.session_state.faiss = None
 if "chunks" not in st.session_state: st.session_state.chunks = None
+if "agent" not in st.session_state: st.session_state.agent = None
 if "llm" not in st.session_state:
     st.session_state.llm = pipeline("text2text-generation", model="google/flan-t5-base")
 
 st.title("🧑‍🎓 Simple Doc-QA Chatbot + Appointment Booking") #Webpage title
-st.caption("No API keys. Uses local Hugging Face models!")
 
 uploaded = st.file_uploader("Upload PDF or TXT", type=["pdf", "txt"]) # File uploader supports pdf and txt
 if uploaded is not None:
@@ -74,9 +75,19 @@ def run_llm(prompt: str) -> str:
 
 if send_clicked and user_msg: # For handling send button click
     if st.session_state.agent:
-        reply = st.session_state.handle_input(user_msg)
+        reply = st.session_state.agent.handle_input(user_msg)
         st.session_state.chat.append(("user", user_msg))
         st.session_state.chat.append(("bot", reply))
+        if "✅ Appointment booked" in reply:
+            st.session_state.agent = None
+        st.rerun()
+        
+    lower = user_msg.lower()
+    if ("call me" in lower) or ("book appointment" in lower):
+        st.session_state.agent = AppointmentAgent()
+        msg = "Okay! Let's book your appointment. What's your name?"
+        st.session_state.chat.append(("user", user_msg))
+        st.session_state.chat.append(("bot", msg))
         st.rerun()
 
     ctx = "" # Context is empty initially
@@ -114,4 +125,8 @@ Answer:
     st.rerun()
 
 st.divider()
-st.write("Simple Chatbot")
+st.write("Type: 'Book Appointment' to Activate Booking conversaational Form")
+st.write("Simple Chatbot - By Ashim Nepal")
+
+
+# BY ASHIM NEPAL
