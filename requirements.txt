@@ -7,5 +7,4 @@ python-dateutil
 validators
 numpy
 scikit-learn
-tensorflow
 torch
