@@ -1,0 +1,1 @@
+This simple sample doc is used for testing. The project i.e. this chatbot uses FAISS for retrival and flan-t5-base for generation. The appointment agent anf conversational form here collects data like name, phone, email and preferred appointment date.
